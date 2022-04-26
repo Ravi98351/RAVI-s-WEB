@@ -1,13 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1>ravi</h1>
-    
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>U2C3 Mock</title>
+    <style>
+
+
+
+
+
+    </style>
+  </head>
+  <body>
+    <form>
+      <select id="month">
+        <option value="JANUARY">JANUARY</option>
+        <option value="FEBRUARY">FEBRUARY</option>
+        <option value="MARCH">MARCH</option>
+        <option value="APRIL">APRIL</option>
+        <option value="MAY">MAY</option>
+        <option value="JUNE">JUNE</option>
+        <option value="JULY">JULY</option>
+        <option value="AUGUST">AUGUST</option>
+        <option value="SEPETEMBER">SEPETEMBER</option>
+        <option value="OCTOBER">OCTOBER</option>
+        <option value="NOVEMBER">NOVEMBER</option>
+        <option value="DECEMBER">DECEMBER</option>
+      </select>
+
+      <input id="income" type="number" placeholder="Enter Income" />
+
+      <input id="expense" type="number" placeholder="Enter expense" />
+
+      <input type="submit" />
+    </form>
+
+    <div id="report">
+          <!-- Append your cards here -->
+          
+    </div>
+  </body>
 </html>
+
+<script>
+document.querySelector("form").addEventListener("submit",myfunction);
+
+function myfunction(){
+  event.preventDefault();
+var income=document.querySelector("#income").value
+console.log(income)
+
+var  expense=document.querySelector("#expense").value
+
+var p1=document.createElement("p")
+p1.innerText=income;
+var p2=document.createElement("p")
+p2.innerText=expense;
+var p3=document.createElement("p")
+if(income>expense){
+  p3.innerText="save"
+  p3.style.color="green"
+}
+else if(income<expense){p3.innerText="Dedt"
+p3.style.color="red"}
+else{p3.innerText="Break"
+p3.style.color="yellow"}
+var month=document.querySelector("#month").value
+var h3=document.createElement("h1")
+h3.innerText=month
+
+var btn=document.createElement("button")
+btn.innerText="DELET"
+btn.addEventListener("click", delet)
+
+
+document.querySelector("div").append(h3);
+document.querySelector("div").append(p1);
+document.querySelector("div").append(p2); 
+document.querySelector("div").append(p3); 
+document.querySelector("div").append(btn);                  
+
+
+}
+
+function delet(){
+  event.target.parentNode.remove();
+}
+
+
+
+  
+  
+</script>
